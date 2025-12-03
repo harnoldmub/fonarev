@@ -10,9 +10,9 @@ export function Footer() {
           <div className="space-y-4">
             <div className="bg-white p-2 inline-block rounded-md">
                <img 
-                src="/attached_assets/logo-fonarev.0e598c0b_1764796138603.png" 
+                src="/attached_assets/logo-fonarev.0e598c0b_1764796786859.png" 
                 alt="FONAREV" 
-                className="h-12 w-auto"
+                className="h-16 w-auto bg-white rounded px-2 py-1"
               />
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">

@@ -23,9 +23,9 @@ export function Navbar() {
         <Link href="/">
           <a className="flex items-center gap-2">
             <img 
-              src="/attached_assets/logo-fonarev.0e598c0b_1764796138603.png" 
+              src="/attached_assets/logo-fonarev.0e598c0b_1764796786859.png" 
               alt="FONAREV Logo" 
-              className="h-12 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
           </a>
         </Link>
