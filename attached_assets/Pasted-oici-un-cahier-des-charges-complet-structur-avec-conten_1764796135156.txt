@@ -1,0 +1,323 @@
+oici un cahier des charges complet, structuré + avec contenus rédigés, pour la refonte moderne du site FONAREV avec intégration d’un chat.
+Tu peux remettre ce document tel quel à un développeur ou une agence.
+
+📘 CAHIER DES CHARGES – Refonte du site FONAREV + Chat intégré
+1. Présentation du projet
+
+Le Fonds National de Réparation des Victimes de violences sexuelles et basées sur le genre (FONAREV) souhaite moderniser son site web afin d’améliorer :
+
+L’expérience utilisateur
+
+L’accessibilité à l’information
+
+La compréhension de sa mission
+
+La relation avec les bénéficiaires et partenaires
+
+Le soutien (donateurs, institutionnels, journalistes, ONG)
+
+La prise de contact
+
+La refonte inclut une modernisation UX/UI, une réorganisation des contenus et l’intégration d’un chat d’assistance.
+
+2. Objectifs du site modernisé
+✔ Objectifs généraux
+
+Donner une image institutionnelle moderne, crédible et professionnelle
+
+Faciliter l’accès à l’information essentielle
+
+Offrir un accompagnement en ligne via un chat clair et disponible
+
+Rendre le site accessible (WCAG, contraste, lecture écran)
+
+Optimiser la navigation mobile
+
+Valoriser les actions du Fonds auprès du public
+
+✔ Objectifs opérationnels
+
+Centraliser l’information sur les missions du FONAREV
+
+Fournir des guides et ressources pour les victimes
+
+Permettre le dépôt de demande d’information
+
+Faciliter les dons (particuliers / institutions)
+
+Renforcer la transparence via actualités, documents et médiathèque
+
+Simplifier la prise de contact
+
+3. Architecture du site (arborescence)
+1️⃣ Accueil
+2️⃣ À propos
+
+Mission
+
+Vision & valeurs
+
+Historique
+
+Gouvernance
+
+Partenaires institutionnels
+
+3️⃣ Réparation & Programmes
+
+Que fait le FONAREV ?
+
+Processus de réparation
+
+Critères & bénéficiaires
+
+Types de réparations (individuelles / collectives)
+
+FAQ dédiée aux victimes
+
+4️⃣ Actualités & Communiqués
+
+Articles
+
+Événements
+
+Podcasts / vidéos
+
+5️⃣ Médiathèque
+
+Photos
+
+Vidéos
+
+Documents téléchargeables
+
+Rapports annuels
+
+6️⃣ Faire un Don
+
+Pourquoi donner
+
+Transparence financière
+
+Procédure sécurisée
+
+7️⃣ Contact
+
+Formulaire
+
+Téléphones officiels
+
+Adresses / implantations
+
+8️⃣ Chat en ligne (widget accessible sur toutes les pages)
+4. Contenus rédigés pour le futur site
+🏠 1. Accueil – Contenus
+Bannière principale
+
+FONAREV – Fonds National de Réparation des Victimes
+Nous œuvrons pour la justice, la dignité et la réparation des victimes de violences sexuelles et basées sur le genre en République Démocratique du Congo.
+
+Boutons :
+
+Découvrir notre mission
+
+Vous avez besoin d’aide ?
+
+Section : Qui sommes-nous ?
+
+Le FONAREV est un établissement public chargé de mettre en œuvre la réparation en faveur des victimes de violences sexuelles et des violations graves des droits humains.
+Nous accompagnons les survivantes et survivants en leur offrant un soutien réparateur, psychosocial, économique et juridique.
+
+Section : Nos axes d’intervention
+
+🔹 Réparation individuelle
+
+🔹 Réparation collective
+
+🔹 Accompagnement psychosocial
+
+🔹 Réhabilitation communautaire
+
+🔹 Plaidoyer et sensibilisation
+
+Section : Actualités
+
+Bloc d'articles (3 derniers).
+
+Section : Accès rapide
+
+Faire un don
+
+Contacter le FONAREV
+
+Accéder à la médiathèque
+
+🧭 2. À propos – Contenus
+Mission
+
+Assurer la réparation des victimes de violences sexuelles et de violations des droits humains, en leur offrant justice, dignité et réintégration socio-économique.
+
+Vision
+
+Une société congolaise où chaque survivant retrouve sa place, sa dignité et son avenir.
+
+Valeurs
+
+Intégrité
+
+Respect de la dignité humaine
+
+Transparence
+
+Humanité
+
+Justice
+
+Gouvernance
+
+Présentation du comité directeur, organigramme, coordination nationale et provinciale.
+
+🌿 3. Réparation & Programmes – Contenus
+Processus de réparation
+
+Identification et orientation des victimes
+
+Enregistrement & évaluation des besoins
+
+Mise en œuvre du plan de réparation
+
+Suivi psychosocial et économique
+
+Réinsertion et accompagnement
+
+Types de réparations
+
+Réparation médicale
+
+Aide psychosociale
+
+Redevabilité économique
+
+Aide juridique
+
+Éducation / réhabilitation
+
+FAQ Victimes
+
+Questions :
+
+Qui peut bénéficier de la réparation ?
+
+Comment soumettre une demande ?
+
+Les services sont-ils gratuits ?
+
+Mes données sont-elles protégées ?
+
+📰 4. Actualités
+
+Contenus standard : articles, communiqués, messages officiels, vidéos.
+
+🎥 5. Médiathèque
+
+Vidéos institutionnelles
+
+Photos d’activités
+
+Témoignages (avec consentement)
+
+Rapports annuels PDF
+
+Brochures & documents éducatifs
+
+💛 6. Faire un Don – Contenus
+Pourquoi donner ?
+
+Chaque contribution aide à restaurer la dignité, soutenir la reconstruction de vies brisées et renforcer la lutte contre les violences sexuelles.
+
+Sécurité & Transparence
+
+Traçabilité des dons
+
+Rapports publics
+
+Gestion transparente
+
+Modes de paiement
+
+Mobile money, carte bancaire, virement bancaire (à configurer selon ce qui est autorisé).
+
+📞 7. Contact – Contenus
+
+Formulaire + coordonnées officielles + intégration Google Maps (si souhaitée).
+
+5. Fonctionnalités techniques à intégrer
+🔧 Fonctionnalités essentielles
+
+Site responsive complet
+
+Système de gestion de contenu (CMS) – WordPress ou autre
+
+Module d’actualités
+
+Module de médiathèque
+
+Module donation sécurisé
+
+Formulaire de contact avancé
+
+Support multi-langue éventuel
+
+🔒 Sécurité
+
+HTTPS + certificat SSL
+
+Protection anti-intrusion
+
+Sauvegardes automatisées
+
+Optimisation des images
+
+RGPD + politique de confidentialité
+
+6. Chat intégré – Spécifications techniques
+🔹 Fonctionnalités du chat
+
+Widget visible en bas à droite
+
+Mode “agent en ligne / hors ligne”
+
+Formulaire automatique lorsqu’aucun agent n’est disponible
+
+Possibilité de guider l'utilisateur vers :
+
+FAQ
+
+Formulaires
+
+Documents utiles
+
+Envoi automatique d'email de suivi
+
+Collecte minimum de données (nom + message uniquement)
+
+Interface accessible (contraste, navigation clavier)
+
+🔹 Objectif du chat
+
+Assister les victimes dans l’accès à l’information
+
+Orienter les visiteurs dans le site
+
+Optimiser la prise de contact
+
+Renforcer la confiance dans l’institution
+
+7. Charte graphique – Recommandations
+Couleurs
+
+Bleu foncé / Bleu institutionnel (confiance)
+
+Doré ou jaune (espoir / dignité)
+
+Blanc (clarité, neutralité)
