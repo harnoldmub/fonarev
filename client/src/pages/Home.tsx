@@ -28,7 +28,7 @@ export function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        
+
         {/* Mission Section */}
         <Section className="bg-white">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -48,10 +48,11 @@ export function Home() {
               </Link>
             </div>
             <div className="relative h-[400px] bg-muted rounded-2xl overflow-hidden shadow-xl">
-               {/* Placeholder for 'About' image - using a colored gradient block for now or generic styling */}
-               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center">
-                 <Scale className="h-32 w-32 text-primary/20" />
-               </div>
+              <img
+                src="/assets/images/mission_about.png"
+                alt="Community support and empowerment"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </Section>
@@ -98,8 +99,11 @@ export function Home() {
             {news.map((item, index) => (
               <div key={index} className="group cursor-pointer">
                 <div className="aspect-video bg-muted rounded-xl mb-4 overflow-hidden relative">
-                  <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                  {/* Placeholder image logic */}
+                  <img
+                    src={`/assets/images/news_${index === 0 ? 'goma' : index === 1 ? 'report' : 'visit'}.png`}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 <div className="flex items-center gap-2 text-xs text-secondary-foreground/70 font-medium mb-2">
                   <span className="bg-secondary/20 text-secondary-foreground px-2 py-0.5 rounded-full">{item.category}</span>
@@ -129,12 +133,12 @@ export function Home() {
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link href="/faire-un-don">
-                   <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold text-lg px-8 h-14">
+                  <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold text-lg px-8 h-14">
                     Faire un don maintenant
                   </Button>
                 </Link>
                 <Link href="/contact">
-                   <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 h-14">
+                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 h-14">
                     Devenir partenaire
                   </Button>
                 </Link>
@@ -142,10 +146,10 @@ export function Home() {
             </div>
           </div>
         </Section>
-        
+
         <div className="h-16" /> {/* Spacer */}
       </main>
-      
+
       <Footer />
       <ChatWidget />
     </div>

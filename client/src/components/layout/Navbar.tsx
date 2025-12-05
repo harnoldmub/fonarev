@@ -19,13 +19,12 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-2">
-            <img 
-              src="/attached_assets/logo-fonarev.0e598c0b_1764796786859.png" 
-              alt="FONAREV Logo" 
-              className="h-14 w-auto object-contain"
+          <a className="flex items-center gap-3 z-50">
+            <img
+              src="/assets/hero/fonarev_logo.png"
+              alt="FONAREV"
+              className="h-16 w-auto object-contain"
             />
           </a>
         </Link>
@@ -34,12 +33,11 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
-              <a 
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === link.href 
-                    ? "text-primary font-semibold" 
+              <a
+                className={`text-sm font-medium transition-colors hover:text-primary ${location === link.href
+                    ? "text-primary font-semibold"
                     : "text-muted-foreground"
-                }`}
+                  }`}
               >
                 {link.label}
               </a>
@@ -69,7 +67,7 @@ export function Navbar() {
               <nav className="flex flex-col gap-4 mt-8">
                 {links.map((link) => (
                   <Link key={link.href} href={link.href}>
-                    <a 
+                    <a
                       className="text-lg font-medium py-2 px-4 hover:bg-muted rounded-md transition-colors"
                       onClick={() => setIsOpen(false)}
                     >

@@ -6,12 +6,11 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
           <div className="space-y-4">
             <div className="bg-white p-2 inline-block rounded-md">
-               <img 
-                src="/attached_assets/logo-fonarev.0e598c0b_1764796786859.png" 
-                alt="FONAREV" 
+              <img
+                src="/assets/hero/fonarev_logo.png"
+                alt="FONAREV"
                 className="h-16 w-auto bg-white rounded px-2 py-1"
               />
             </div>
@@ -44,7 +43,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-secondary shrink-0" />
-                <span>Kinshasa, RDC<br/>(Adresse complète à ajouter)</span>
+                <span>Kinshasa, RDC<br />(Adresse complète à ajouter)</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-secondary shrink-0" />

@@ -5,16 +5,16 @@ export function Hero() {
   return (
     <div className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/attached_assets/stock_images/african_community_ho_aaea8a69.jpg')",
+          backgroundImage: "url('/assets/hero/hero_bg_women.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/60 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/50 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       {/* Content */}
@@ -23,16 +23,16 @@ export function Hero() {
           <div className="inline-block bg-secondary/90 text-secondary-foreground px-4 py-1.5 rounded-full text-sm font-semibold mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
             Fonds National de Réparation des Victimes
           </div>
-          
+
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-            Justice, Dignité <br/>
+            Justice, Dignité <br />
             <span className="text-secondary italic">et Réparation.</span>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
             Nous œuvrons pour la justice et la reconstruction des vies des victimes de violences sexuelles et basées sur le genre en République Démocratique du Congo.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
             <Link href="/about">
               <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold h-14 px-8 text-base">
