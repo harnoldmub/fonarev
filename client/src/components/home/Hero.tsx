@@ -19,6 +19,10 @@ export function Hero() {
             <Link href="/about" className="inline-flex min-h-12 items-center justify-center gap-3 bg-primary px-6 text-sm font-bold text-white transition-colors hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Découvrir le FONAREV <ArrowDownRight className="h-4 w-4" /></Link>
             <a href="#parcours" className="inline-flex min-h-12 items-center justify-center border border-foreground/25 px-6 text-sm font-bold text-foreground transition-colors hover:border-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">Comprendre le parcours</a>
           </div>
+          <div className="relative mt-10 h-56 overflow-hidden sm:h-72 lg:hidden">
+            <img src="/assets/hero/hero_bg_women.jpg" alt="Une communauté réunie dans un moment de partage" className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-primary/10" />
+          </div>
         </div>
         <div className="mt-12 border-l border-primary/35 pl-5 lg:mb-1 lg:mt-0 lg:ml-12 lg:max-w-xs"><p className="text-[11px] font-bold uppercase tracking-[0.16em] text-primary">Notre mandat</p><p className="mt-3 font-serif text-xl leading-snug text-foreground">Une réponse publique fondée sur la dignité, la justice et la mémoire.</p></div>
       </div>
