@@ -1,91 +1,77 @@
 import { Link, useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Menu, X, Heart } from "lucide-react";
-import { useState } from "react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+
+const links = [
+  { href: "/", label: "Accueil" }, { href: "/about", label: "Le FONAREV" }, { href: "/programmes", label: "Nos missions" },
+  { href: "/programmes#parcours", label: "Réparations" }, { href: "/actualites", label: "Actualités" }, { href: "/contact", label: "Contact" },
+];
 
 export function Navbar() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
-  const links = [
-    { href: "/", label: "Accueil" },
-    { href: "/about", label: "À propos" },
-    { href: "/programmes", label: "Réparation & Programmes" },
-    { href: "/actualites", label: "Actualités" },
-    { href: "/contact", label: "Contact" },
-  ];
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 16); onScroll(); window.addEventListener("scroll", onScroll, { passive: true }); return () => window.removeEventListener("scroll", onScroll); }, []);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${scrolled ? "border-border bg-white/95 shadow-sm backdrop-blur" : "border-transparent bg-white/90"}`}>
+      <div className={`container mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-10 transition-all duration-300 ${scrolled ? "h-16" : "h-[76px]"}`}>
         <Link href="/">
-          <a className="flex items-center gap-3 z-50">
-            <img
-              src="/assets/hero/fonarev_logo.png"
-              alt="FONAREV"
-              className="h-16 w-auto object-contain"
-            />
-          </a>
+          <span className="flex items-center" aria-label="FONAREV — Accueil">
+            <img src="/assets/hero/fonarev_logo.png" alt="FONAREV" className="h-10 w-auto object-contain sm:h-11" />
+          </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-5" aria-label="Navigation principale">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
-              <a
-                className={`text-sm font-medium transition-colors hover:text-primary ${location === link.href
+              <span
+                className={`text-[13px] font-semibold transition-colors hover:text-primary ${location === link.href.split("#")[0]
                     ? "text-primary font-semibold"
                     : "text-muted-foreground"
                   }`}
               >
                 {link.label}
-              </a>
+              </span>
             </Link>
           ))}
-        </div>
+        </nav>
 
         {/* Desktop Action */}
-        <div className="hidden md:block">
-          <Link href="/faire-un-don">
-            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold shadow-md">
-              <Heart className="mr-2 h-4 w-4" />
-              Faire un don
-            </Button>
-          </Link>
-        </div>
+        <Link href="/programmes#parcours" className="hidden md:inline-flex min-h-10 items-center border border-primary px-4 text-xs font-bold uppercase tracking-[0.08em] text-primary transition-colors hover:bg-primary hover:text-white">Espace victimes</Link>
 
         {/* Mobile Menu */}
-        <div className="md:hidden">
+        <div className="xl:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <button className="inline-flex h-10 w-10 items-center justify-center" aria-label="Ouvrir le menu">
                 <Menu className="h-6 w-6" />
-              </Button>
+              </button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
+            <SheetContent side="right" className="w-[min(88vw,360px)] border-l-border p-0">
+              <SheetTitle className="sr-only">Navigation principale</SheetTitle>
+              <SheetDescription className="sr-only">Accédez aux rubriques du site FONAREV.</SheetDescription>
+              <div className="flex h-[76px] items-center justify-between border-b px-6"><span className="text-sm font-bold tracking-wide text-primary">NAVIGATION</span><button className="inline-flex h-10 w-10 items-center justify-center" onClick={() => setIsOpen(false)} aria-label="Fermer le menu"><X className="h-5 w-5" /></button></div>
+              <nav className="flex flex-col px-6 py-6" aria-label="Navigation mobile">
                 {links.map((link) => (
                   <Link key={link.href} href={link.href}>
-                    <a
-                      className="text-lg font-medium py-2 px-4 hover:bg-muted rounded-md transition-colors"
+                    <span
+                      className="border-b border-border py-4 text-lg font-serif font-semibold text-foreground"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.label}
-                    </a>
+                    </span>
                   </Link>
                 ))}
-                <Link href="/faire-un-don">
-                  <Button className="w-full mt-4 bg-secondary text-secondary-foreground" onClick={() => setIsOpen(false)}>
-                    <Heart className="mr-2 h-4 w-4" />
-                    Faire un don
-                  </Button>
-                </Link>
+                <Link href="/programmes#parcours" onClick={() => setIsOpen(false)} className="mt-7 inline-flex min-h-12 items-center justify-center bg-primary px-5 text-sm font-bold text-white">Espace victimes</Link>
               </nav>
             </SheetContent>
           </Sheet>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

@@ -48,7 +48,7 @@ export function Programs() {
         </Section>
 
         {/* Process */}
-        <Section className="bg-muted/30">
+        <Section id="parcours" className="bg-muted/30">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-serif font-bold text-primary text-center mb-12">Le Processus de Réparation</h2>
             <div className="relative">

@@ -1,157 +1,60 @@
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/home/Hero";
-import { Section } from "@/components/shared/Section";
-import { ChatWidget } from "@/components/ChatWidget";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Users, Shield, Heart, Scale, Megaphone } from "lucide-react";
+import { ArrowRight, FileText, MapPin } from "lucide-react";
 import { Link } from "wouter";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { Hero } from "@/components/home/Hero";
+
+const missions = [
+  ["01", "Identification et orientation", "Faire connaître les mécanismes d’accès et orienter les personnes vers les services compétents."],
+  ["02", "Accompagnement", "Prendre en compte les besoins des victimes tout au long de leur parcours."],
+  ["03", "Réparation", "Mettre en œuvre les formes de réparation prévues par le mandat du FONAREV."],
+  ["04", "Mémoire et reconstruction", "Contribuer à une reconstruction qui reconnaît les préjudices et protège la dignité."],
+];
+
+const steps = ["Identification", "Enregistrement", "Évaluation", "Accompagnement", "Réparation", "Suivi"];
 
 export function Home() {
-  const axes = [
-    { icon: Users, title: "Réparation Individuelle", desc: "Soutien direct aux victimes identifiées." },
-    { icon: Users, title: "Réparation Collective", desc: "Projets communautaires pour la reconstruction." },
-    { icon: Heart, title: "Accompagnement Psychosocial", desc: "Guérison des traumatismes et soutien mental." },
-    { icon: Shield, title: "Réhabilitation Communautaire", desc: "Restaurer le tissu social et la sécurité." },
-    { icon: Megaphone, title: "Plaidoyer", desc: "Sensibilisation et défense des droits." },
-  ];
-
-  const news = [
-    { date: "02 Dec 2025", title: "Lancement de la campagne de sensibilisation à Goma", category: "Événement" },
-    { date: "28 Nov 2025", title: "Nouveau rapport sur l'impact des réparations collectives", category: "Rapport" },
-    { date: "15 Nov 2025", title: "Visite officielle des partenaires internationaux", category: "Institutionnel" },
-  ];
-
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <main className="flex-1">
+      <main>
         <Hero />
 
-        {/* Mission Section */}
-        <Section className="bg-white">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">Qui sommes-nous ?</h2>
-              <div className="h-1 w-20 bg-secondary rounded-full" />
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Le FONAREV est un établissement public chargé de mettre en œuvre la réparation en faveur des victimes de violences sexuelles et des violations graves des droits humains.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Nous accompagnons les survivantes et survivants en leur offrant un soutien réparateur, psychosocial, économique et juridique. Notre mission est de restaurer la dignité brisée et de permettre une réintégration durable.
-              </p>
-              <Link href="/about">
-                <Button variant="link" className="p-0 text-primary font-semibold hover:text-primary/80 text-lg">
-                  En savoir plus sur notre histoire <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-            <div className="relative h-[400px] bg-muted rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src="/assets/images/mission_about.png"
-                alt="Community support and empowerment"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </Section>
-
-        {/* Axes d'intervention */}
-        <Section className="bg-muted/30">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">Nos Axes d'Intervention</h2>
-            <p className="text-muted-foreground">
-              Une approche holistique pour une réparation complète et durable.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {axes.map((axe, index) => (
-              <Card key={index} className="border-none shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-                <CardHeader>
-                  <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                    <axe.icon className="h-6 w-6" />
-                  </div>
-                  <CardTitle className="text-xl font-bold text-foreground">{axe.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{axe.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </Section>
-
-        {/* News Section */}
-        <Section>
-          <div className="flex justify-between items-end mb-12">
+        <section className="border-b border-border bg-white py-20 sm:py-28">
+          <div className="container mx-auto grid gap-10 px-5 sm:px-8 lg:grid-cols-[.72fr_1.28fr] lg:px-10">
+            <p className="section-label">01 / MISSION DU FONAREV</p>
             <div>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-2">Actualités</h2>
-              <p className="text-muted-foreground">Les dernières nouvelles du FONAREV</p>
-            </div>
-            <Link href="/actualites">
-              <Button variant="outline">Voir tout</Button>
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {news.map((item, index) => (
-              <div key={index} className="group cursor-pointer">
-                <div className="aspect-video bg-muted rounded-xl mb-4 overflow-hidden relative">
-                  <img
-                    src={`/assets/images/news_${index === 0 ? 'goma' : index === 1 ? 'report' : 'visit'}.png`}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="flex items-center gap-2 text-xs text-secondary-foreground/70 font-medium mb-2">
-                  <span className="bg-secondary/20 text-secondary-foreground px-2 py-0.5 rounded-full">{item.category}</span>
-                  <span>{item.date}</span>
-                </div>
-                <h3 className="text-lg font-bold group-hover:text-primary transition-colors leading-tight mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground line-clamp-2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-                </p>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* CTA Section */}
-        <Section className="py-0">
-          <div className="bg-primary rounded-3xl overflow-hidden relative">
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
-            <div className="relative z-10 px-6 py-16 md:px-16 md:py-20 text-center max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">
-                Votre soutien change des vies
-              </h2>
-              <p className="text-primary-foreground/80 text-lg mb-10 max-w-2xl mx-auto">
-                Chaque contribution aide à restaurer la dignité, soutenir la reconstruction de vies brisées et renforcer la lutte contre les violences sexuelles.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link href="/faire-un-don">
-                  <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold text-lg px-8 h-14">
-                    Faire un don maintenant
-                  </Button>
-                </Link>
-                <Link href="/contact">
-                  <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 text-lg px-8 h-14">
-                    Devenir partenaire
-                  </Button>
-                </Link>
+              <h2 className="max-w-4xl text-4xl font-serif font-semibold leading-[1.08] text-foreground sm:text-5xl">Placer les victimes au cœur du processus de réparation et de reconstruction.</h2>
+              <div className="mt-9 grid gap-6 border-t border-border pt-6 md:grid-cols-2">
+                <p className="text-base leading-7 text-muted-foreground">Le FONAREV est un établissement public chargé de mettre en œuvre la réparation en faveur des victimes de violences sexuelles et des violations graves des droits humains.</p>
+                <Link href="/about" className="group inline-flex items-center gap-3 self-start text-sm font-bold text-primary">Comprendre notre mandat <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></Link>
               </div>
             </div>
           </div>
-        </Section>
+        </section>
 
-        <div className="h-16" /> {/* Spacer */}
+        <section id="missions" className="bg-[#f5f7f6] py-20 sm:py-28">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-10">
+            <div className="mb-14 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><p className="section-label">02 / NOS MISSIONS</p><h2 className="mt-4 text-4xl font-serif font-semibold sm:text-5xl">Agir avec méthode,<br />écouter avec attention.</h2></div><p className="max-w-sm text-sm leading-6 text-muted-foreground">Les actions présentées ici traduisent les domaines d’intervention déjà établis dans les contenus du projet.</p></div>
+            <div className="grid border-t border-foreground/20 md:grid-cols-2">
+              {missions.map(([number, title, description]) => <article key={number} className="group border-b border-foreground/20 py-7 md:px-7 md:even:border-l"><div className="flex gap-5"><span className="pt-1 text-xs font-bold text-primary">{number}</span><div><h3 className="text-2xl font-serif font-semibold">{title}</h3><p className="mt-3 max-w-md text-sm leading-6 text-muted-foreground">{description}</p></div></div></article>)}
+            </div>
+          </div>
+        </section>
+
+        <section id="parcours" className="bg-primary py-20 text-white sm:py-28">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-10"><div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr]"><div><p className="section-label text-white/70">03 / PARCOURS DE LA VICTIME</p><h2 className="mt-4 text-4xl font-serif font-semibold leading-tight sm:text-5xl">Une information claire à chaque étape.</h2><p className="mt-6 max-w-md text-base leading-7 text-white/75">Cette architecture présente le parcours d’orientation. Les modalités précises et les services disponibles doivent être confirmés avec les informations officielles.</p><Link href="/programmes" className="mt-8 inline-flex items-center gap-3 border-b border-white pb-2 text-sm font-bold">Consulter les informations disponibles <ArrowRight className="h-4 w-4" /></Link></div><ol className="grid content-end gap-0 sm:grid-cols-2 lg:grid-cols-3">{steps.map((step, index) => <li key={step} className="border-t border-white/30 px-0 py-5 sm:px-5 sm:even:border-l lg:px-4"><span className="text-xs font-bold text-secondary">{String(index + 1).padStart(2, "0")}</span><p className="mt-3 text-xl font-serif font-semibold">{step}</p></li>)}</ol></div></div>
+        </section>
+
+        <section className="bg-white py-20 sm:py-28">
+          <div className="container mx-auto grid gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:px-10"><div className="relative min-h-[340px] overflow-hidden bg-muted"><img src="/assets/images/mission_about.png" alt="Personnes participant à une activité communautaire" className="absolute inset-0 h-full w-full object-cover" loading="lazy" /><div className="absolute inset-x-0 bottom-0 bg-foreground/80 p-5 text-xs font-bold uppercase tracking-[0.14em] text-white">Action sur le territoire</div></div><div className="lg:py-7"><p className="section-label">04 / DIMENSION NATIONALE</p><h2 className="mt-4 text-4xl font-serif font-semibold leading-tight sm:text-5xl">Une présence à rendre lisible, sans la simplifier.</h2><p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">Les données territoriales vérifiées pourront être intégrées ici sous la forme d’une cartographie sobre des zones d’intervention et des services disponibles.</p><div className="mt-10 flex items-start gap-4 border-t border-border pt-6"><MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" /><p className="text-sm leading-6 text-foreground/75">Les informations de couverture géographique seront publiées à partir des données institutionnelles validées.</p></div></div></div>
+        </section>
+
+        <section id="ressources" className="border-y border-border bg-[#f5f7f6] py-20 sm:py-28"><div className="container mx-auto px-5 sm:px-8 lg:px-10"><div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr]"><div><p className="section-label">05 / RESSOURCES</p><h2 className="mt-4 text-4xl font-serif font-semibold sm:text-5xl">Une information publique, accessible.</h2></div><div className="border-t border-foreground/20">{[["Rapports et publications", "Documents de référence et rapports institutionnels."], ["Communiqués", "Informations officielles du FONAREV."], ["Appels et opportunités", "Avis et opportunités destinés aux publics concernés."]].map(([title, text]) => <article key={title} className="flex gap-5 border-b border-foreground/20 py-6"><FileText className="mt-1 h-5 w-5 shrink-0 text-primary" /><div><h3 className="text-xl font-serif font-semibold">{title}</h3><p className="mt-1 text-sm leading-6 text-muted-foreground">{text}</p></div></article>)}</div></div></div></section>
+
+        <section className="bg-white py-20 sm:py-28"><div className="container mx-auto px-5 sm:px-8 lg:px-10"><div className="border border-foreground/20 p-7 sm:p-10 lg:flex lg:items-end lg:justify-between lg:p-14"><div><p className="section-label">BESOIN D’INFORMATION ?</p><h2 className="mt-4 max-w-2xl text-4xl font-serif font-semibold leading-tight sm:text-5xl">Trouver le bon interlocuteur, avec confidentialité et respect.</h2><p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">Victimes, associations, partenaires, médias et institutions peuvent accéder aux canaux d’information du FONAREV.</p></div><Link href="/contact" className="mt-8 inline-flex min-h-12 items-center gap-3 bg-primary px-6 text-sm font-bold text-white lg:mt-0">Contacter le FONAREV <ArrowRight className="h-4 w-4" /></Link></div></div></section>
       </main>
-
       <Footer />
-      <ChatWidget />
     </div>
   );
 }

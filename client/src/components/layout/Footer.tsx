@@ -1,80 +1,16 @@
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import { Link } from "wouter";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="space-y-4">
-            <div className="bg-white p-2 inline-block rounded-md">
-              <img
-                src="/assets/hero/fonarev_logo.png"
-                alt="FONAREV"
-                className="h-16 w-auto bg-white rounded px-2 py-1"
-              />
-            </div>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Fonds National de Réparation des Victimes de violences sexuelles et basées sur le genre.
-              Justice, Dignité et Réparation.
-            </p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-secondary transition-colors"><Facebook className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-secondary transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-secondary transition-colors"><Linkedin className="h-5 w-5" /></a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-serif text-lg font-semibold mb-6 text-secondary">Accès Rapide</h4>
-            <ul className="space-y-3 text-sm">
-              <li><Link href="/about"><a className="hover:text-secondary transition-colors">À propos de nous</a></Link></li>
-              <li><Link href="/programmes"><a className="hover:text-secondary transition-colors">Nos Programmes</a></Link></li>
-              <li><Link href="/actualites"><a className="hover:text-secondary transition-colors">Actualités</a></Link></li>
-              <li><Link href="/mediatheque"><a className="hover:text-secondary transition-colors">Médiathèque</a></Link></li>
-              <li><Link href="/faq"><a className="hover:text-secondary transition-colors">FAQ Victimes</a></Link></li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-serif text-lg font-semibold mb-6 text-secondary">Contact</h4>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-secondary shrink-0" />
-                <span>Kinshasa, RDC<br />(Adresse complète à ajouter)</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-secondary shrink-0" />
-                <span>+243 000 000 000</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-secondary shrink-0" />
-                <span>contact@fonarev.cd</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Newsletter / Legal */}
-          <div>
-            <h4 className="font-serif text-lg font-semibold mb-6 text-secondary">Informations Légales</h4>
-            <ul className="space-y-3 text-sm">
-              <li><a href="#" className="hover:text-secondary transition-colors">Politique de confidentialité</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Mentions légales</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Transparence financière</a></li>
-            </ul>
-            <div className="mt-8 p-4 bg-primary-foreground/10 rounded-lg border border-primary-foreground/20">
-              <p className="text-xs italic text-center">
-                "Une société où chaque survivant retrouve sa place."
-              </p>
-            </div>
-          </div>
+    <footer className="bg-[#162b3a] text-white">
+      <div className="container mx-auto px-5 py-14 sm:px-8 lg:px-10 lg:py-16">
+        <div className="grid gap-12 border-b border-white/20 pb-12 md:grid-cols-[1.3fr_.8fr_.9fr]">
+          <div><div className="inline-flex bg-white p-2"><img src="/assets/hero/fonarev_logo.png" alt="FONAREV" className="h-10 w-auto" /></div><p className="mt-7 max-w-md text-sm leading-6 text-white/70">Fonds National de Réparation des Victimes de Violences Sexuelles liées aux Conflits et des Victimes des Crimes contre la Paix et la Sécurité de l’Humanité.</p><p className="mt-5 text-xs font-bold uppercase tracking-[0.14em] text-secondary">République Démocratique du Congo</p></div>
+          <div><h2 className="text-xs font-bold uppercase tracking-[0.14em] text-secondary">Navigation</h2><ul className="mt-5 space-y-3 text-sm text-white/75"><li><Link href="/about" className="hover:text-white">Le FONAREV</Link></li><li><Link href="/programmes" className="hover:text-white">Missions et réparations</Link></li><li><Link href="/actualites" className="hover:text-white">Actualités</Link></li><li><Link href="/contact" className="hover:text-white">Contact</Link></li></ul></div>
+          <div><h2 className="text-xs font-bold uppercase tracking-[0.14em] text-secondary">Informations</h2><div className="mt-5 space-y-4 text-sm leading-6 text-white/75"><p className="flex gap-3"><MapPin className="mt-1 h-4 w-4 shrink-0 text-secondary" />Coordonnées institutionnelles à publier.</p><p className="flex gap-3"><Mail className="mt-1 h-4 w-4 shrink-0 text-secondary" />Canal de contact à confirmer.</p><Link href="/contact" className="inline-flex items-center gap-2 text-white hover:text-secondary">Accéder au formulaire <ArrowUpRight className="h-4 w-4" /></Link></div></div>
         </div>
-
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} FONAREV. Tous droits réservés.</p>
-        </div>
+        <div className="flex flex-col gap-4 pt-7 text-xs text-white/55 sm:flex-row sm:justify-between"><p>© {new Date().getFullYear()} FONAREV. Tous droits réservés.</p><div className="flex gap-5"><a href="#" className="hover:text-white">Mentions légales</a><a href="#" className="hover:text-white">Politique de confidentialité</a></div></div>
       </div>
     </footer>
   );

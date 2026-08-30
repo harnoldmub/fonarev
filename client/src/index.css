@@ -42,7 +42,7 @@
   
   /* Primary Blue (FONAREV Text & Circle Background) - Strong Cyan-Blue */
   /* Approx #0085CA */
-  --primary: 200 100% 40%; 
+  --primary: 201 100% 35%;
   --primary-foreground: 0 0% 100%;
 
   /* Secondary Yellow (Hand) - Warm Gold/Yellow */
@@ -57,7 +57,7 @@
 
   /* Neutral Backgrounds */
   --background: 0 0% 100%;
-  --foreground: 215 28% 17%; /* Dark Slate for text */
+  --foreground: 205 31% 14%;
 
   --card: 0 0% 100%;
   --card-foreground: 215 28% 17%;
@@ -114,8 +114,22 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    font-size: 16px;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
   }
+  a, button, input, textarea, select {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+  }
+}
+
+@layer utilities {
+  .section-label {
+    @apply text-[11px] font-bold uppercase tracking-[0.16em] text-primary;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
